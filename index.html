@@ -58,7 +58,11 @@
           <h1 class="introduction-banner-hero">
             Effective Solutions for Your Business
           </h1>
-          <button class="introduction-banner-button modal-button" type="button">
+          <button
+            class="introduction-banner-button modal-button"
+            type="button"
+            data-modal-open
+          >
             Order Service
           </button>
         </div>
@@ -510,7 +514,7 @@
         </div>
         <div class="footer-subscribe-box">
           <p class="footer-title">Subscribe</p>
-          <form class="footer-subscribe" bis_skin_checked="1">
+          <form class="footer-subscribe">
             <label class="footer-label">
               <input
                 class="footer-placeholder"
@@ -530,9 +534,9 @@
       </div>
     </footer>
 
-    <div class="backdrop is-open">
+    <div class="backdrop" data-modal>
       <div class="modal">
-        <button class="button-close" type="submit">
+        <button class="button-close" type="submit" data-modal-close>
           <svg class="close" width="8" height="8">
             <use href="./images/icons.svg#icon-close"></use>
           </svg>
@@ -588,26 +592,35 @@
                 class="form-input"
                 name="description"
                 placeholder="Text input"
-                rows="5"
               ></textarea>
             </div>
           </div>
-          <label class="check">
-            <input class="check-input" type="checkbox" />
-            <span class="check-box"></span>
-            I accept the terms and conditions of the
-            <a
-              class="check-box-privacy"
-              href="https://goo.gl/maps/WZ4K6XMvHU7FkgWB7"
-              target="_blank"
-              >Privacy Policy</a
-            >
-          </label>
+          <div class="check-field">
+            <input
+              class="check-input"
+              type="checkbox"
+              name="answer"
+              value="accept"
+              id="accept"
+            />
+            <label for="accept">
+              <span class="check-box">
+                I accept the terms and conditions of the
+                <a
+                  class="check-box-accept"
+                  href="https://goo.gl/maps/WZ4K6XMvHU7FkgWB7"
+                  target="_blank"
+                  >Privacy Policy</a
+                >
+              </span>
+            </label>
+          </div>
           <button class="modal-button modal-button-send" type="button">
             Send
           </button>
         </form>
       </div>
     </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
