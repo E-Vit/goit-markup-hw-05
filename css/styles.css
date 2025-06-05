@@ -200,7 +200,7 @@ img
     color: #FFFFFF;
 }
 
-.introduction-banner-button
+.modal-button
 {
     display: block;
     margin: auto;
@@ -219,14 +219,10 @@ img
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.introduction-banner button:hover
+.modal-button:hover,
+.modal-button:focus
 {
     background-color: #404BBF;
-}
-
-.introduction-banner button:focus 
-{
-    background: #404BBF;
 }
 
 /*section strategy*/
@@ -490,9 +486,16 @@ img
 }
 
 .footer-social-link:hover,
-.footer-social-link:focus
+.footer-social-link:focus,
+.button-subscribe:hover,
+.button-subscribe:focus
 {
     background-color: #31D0AA;
+}
+
+.footer-subscribe-box
+{
+margin-left: auto;
 }
 
 .footer-subscribe
@@ -528,10 +531,15 @@ img
     background: #2e2f42;
 }
 
+.footer-placeholder:hover,
+.footer-placeholder:focus
+{
+    border-color: #31D0AA;
+}
+
 .button-subscribe
 {
     display: block;
-    margin-top: 40px;
     position: relative;
     width: 165px;
     height: 40px;
@@ -558,6 +566,174 @@ img
     transform: translateY(-50%);
     cursor: pointer;
 }
+
+/*modal*/
+
+.backdrop
+{
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 999;
+opacity: 0;
+pointer-events: none;
+visibility: hidden;
+background-color: rgba(46, 47, 66, 0.4);
+transition: opaciti 250ms cubic-bezier(0.4, 0, 0.2, 1),
+visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-open
+{
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+}
+
+.modal
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 408px;
+    min-height: 584px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
+    background-color: #FCFCFC;
+    border-radius: 4px;
+    padding: 24px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop:not(.is-open) .modal
+{
+    transform: translate(-50%, -50%) scale(1.5);
+}
+
+.button-close 
+{
+    position: absolute;
+    top: 24px;
+    right: 24px;   
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    background-color: #E7E9FC;
+    border-radius: 50%;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-title
+{
+    color: #2E2F42;
+    margin-top: 48px;
+    margin-bottom: 16px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    text-align: center;
+        
+}
+
+.form-field
+{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+}
+
+.form-field label
+{
+margin-bottom: 4px;
+}
+
+.form-label
+{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8E8F99;
+}
+
+.input-wrapper,
+.description-wrapper
+{
+    position: relative;
+}
+
+.form-field svg
+{
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.form-field input
+{
+    border: none;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    width: 360px;
+    height: 40px; 
+    padding-left: 38px;
+    outline: none;
+}
+
+.form-field input:hover,
+.form-field input:focus,
+.form-field textarea:hover,
+.form-field textarea:focus
+{    
+    border: 1px solid #4D5AE5;      
+}
+
+.form-field input:hover + svg,
+.form-field input:focus + svg
+{
+    fill: #4D5AE5;
+}
+
+.form-field textarea
+{
+    border: none;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    width: 360px;
+    height: 120px;
+    padding-top: 8px;
+    padding-left: 16px;
+    outline: none;
+}
+
+.form-field textarea::placeholder
+{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
+}
+
+.form-field textarea:focus::placeholder,
+.form-field textarea:hover::placeholder
+{
+    color: #4D5AE5;
+}
+
+.check
+{
+    display: block;
+}
+
 
 
 
