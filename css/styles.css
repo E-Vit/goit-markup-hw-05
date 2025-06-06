@@ -765,11 +765,6 @@ margin-bottom: 4px;
     color: #4D5AE5;
 }
 
-.check
-{
-    display: block;
-}
-
 .check-field
 {
     margin-bottom: 24px;
@@ -803,7 +798,12 @@ margin-bottom: 4px;
     fill: #F4F4FD;
 }
 
-.check-box-accept
+.check-input:checked + .check-box svg
+{
+    fill: #F4F4FD;
+}
+
+.privacy-policy-link
 {
     color: #4D5AE5;
 }
