@@ -791,15 +791,10 @@ margin-bottom: 4px;
     fill: transparent;
 }
 
-.check-input:checked + .check-box
+.check-input:checked + .label-user-privacy .check-box
 {
     background-color: #404BBF;
     border: none;
-    fill: #F4F4FD;
-}
-
-.check-input:checked + .check-box svg
-{
     fill: #F4F4FD;
 }
 
