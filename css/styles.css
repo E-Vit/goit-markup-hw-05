@@ -642,13 +642,16 @@ visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 .close
 {
+    fill: #2E2F42;
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button-close:hover + svg,
-.button-close:focus + svg
+.button-close:hover + .close,
+.button-close:focus + .close
 {
-    fill: #FFFFFF;   }
+    fill: #FFFFFF;
+}
+
 
 
 .modal-title
@@ -706,7 +709,7 @@ margin-bottom: 4px;
     border: none;
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
-    width: 360px;
+    width: 100%;
     height: 40px; 
     background-color: transparent;
     padding-left: 38px;
@@ -719,7 +722,7 @@ margin-bottom: 4px;
 .form-field textarea:hover,
 .form-field textarea:focus
 {    
-    border-color: 1px solid #4D5AE5;      
+    border-color: #4D5AE5;      
 }
 
 .form-field input:hover + svg,
@@ -738,7 +741,7 @@ margin-bottom: 4px;
     border: none;
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
-    width: 360px;
+    width: 100%;
     height: 120px;
     font-size: 12px;
     line-height: 1.17;
